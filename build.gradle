@@ -12,7 +12,7 @@ bukkit {
     name = 'NPCLib'
     version = 'dev-SNAPSHOT'
     author = 'LuisMaartins'
-    main = 'io.github.luismartins.npclib'
+    main = 'io.github.luismartins.npclib.NPCLib'
     depend = ['ProtocolLib']
 }
 
