@@ -10,10 +10,19 @@ compileJava.options.encoding = 'UTF-8'
 
 bukkit {
     name = 'NPCLib'
-    version = 'dev-SNAPSHOT'
+    version = 'dev-' + getGitHash()
     author = 'LuisMaartins'
     main = 'io.github.luismartins.npclib.NPCLib'
     depend = ['ProtocolLib']
+}
+
+String getGitHash() {
+    def output = new ByteArrayOutputStream()
+    exec {
+        standardOutput = output
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+    }
+    return output.toString().trim()
 }
 
 repositories {
